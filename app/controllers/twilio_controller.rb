@@ -3,18 +3,21 @@ require "twilio-ruby"
 
 class TwilioController < ApplicationController
   include Webhookable
- 
+
   after_filter :set_header
-  
+
   skip_before_action :verify_authenticity_token
 
   def welcome
     response = Twilio::TwiML::Response.new do |r|
       r.Say <<"EOS", language: "ja-jp"
 お電話ありがとうございます。
-この電話番号にて新郎新婦へのお祝いメッセージを承ります。
-頂戴したメッセージは、結婚式二次会にて２人にプレゼントいたします。
+この電話番号にて新郎新婦へ送るエピソードを承ります。
+頂戴したメッセージは、披露宴にて２人にプレゼントいたします。
 それまでは、２人には内緒にしておいてください。
+また、皆様から頂いたエピソードの中から披露宴で是非紹介したい
+と思ったものについては、後日今お電話頂いている番号あてに
+ご連絡する可能性があることをご了承下さい。
 EOS
       # -MEMO-
       # 音声ファイルを再生したい場合は次のようにする。
@@ -49,7 +52,7 @@ EOS
       redirect_to "/confirm/#{record.id}"
     rescue Exception => e
       redirect_to "/confirmed"
-    end    
+    end
   end
 
   def confirm

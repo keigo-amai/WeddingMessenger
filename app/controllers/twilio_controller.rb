@@ -12,7 +12,7 @@ class TwilioController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Say <<"EOS", language: "ja-jp"
 お電話ありがとうございます。
-この電話番号にて新郎新婦へ送るエピソードを承ります。
+この電話番号にて新郎新婦へ送るメッセージを承ります。
 頂戴したメッセージは、披露宴にて２人にプレゼントいたします。
 それまでは、２人には内緒にしておいてください。
 また、皆様から頂いたエピソードの中から披露宴で是非紹介したい

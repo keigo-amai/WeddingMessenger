@@ -10,18 +10,15 @@ class TwilioController < ApplicationController
 
   def welcome
     response = Twilio::TwiML::Response.new do |r|
-      r.Say <<"EOS", language: "ja-jp"
-お電話ありがとうございます。
-この電話番号にて新郎新婦へ送るメッセージを承ります。
-頂戴したメッセージは、披露宴にて２人にプレゼントいたします。
-それまでは、２人には内緒にしておいてください。
-また、皆様から頂いたエピソードの中から披露宴で是非紹介したい
-と思ったものについては、後日今お電話頂いている番号あてに
-ご連絡する可能性があることをご了承下さい。
-EOS
+#       r.Say <<"EOS", language: "ja-jp"
+# お電話ありがとうございます。
+# この電話番号にて新郎新婦へのお祝いメッセージを承ります。
+# 頂戴したメッセージは、披露えんにて２人にプレゼントいたします。
+# それまでは、２人には内緒にしておいてください。
+# EOS
       # -MEMO-
       # 音声ファイルを再生したい場合は次のようにする。
-      # r.Play AUDIO_FILE_URL
+      r.Play "../assets/audio/welcome.wav"
       r.Redirect "/record", method: "get"
     end
 

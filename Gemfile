@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.6.2'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.2'
@@ -35,3 +35,4 @@ group :production do
 end
 
 gem 'twilio-ruby', '~> 3.11'
+gem 'rake', '< 11.0'

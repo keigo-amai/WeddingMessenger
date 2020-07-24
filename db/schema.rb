@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140524125857) do
 
-  create_table "records", force: true do |t|
+  create_table "records", force: :cascade do |t|
     t.string   "recording_url"
     t.string   "from"
     t.string   "note"

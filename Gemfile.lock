@@ -188,7 +188,7 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   pg (= 0.15.1)
-  rails (= 4.2.11.3)
+  rails
   rails_12factor (= 0.0.2)
   rake (< 11.0)
   rspec-rails (= 2.13.1)
@@ -203,7 +203,7 @@ DEPENDENCIES
   will_paginate (= 3.0.4)
 
 RUBY VERSION
-   ruby 2.6.2p47
+   ruby 2.6.5p114
 
 BUNDLED WITH
    1.17.3

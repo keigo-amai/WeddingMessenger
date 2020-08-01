@@ -48,6 +48,7 @@ EOS
       record.save
       redirect_to "/confirm/#{record.id}"
     rescue Exception => e
+      p e
       redirect_to "/confirmed"
     end
   end

@@ -42,10 +42,14 @@ EOS
   def recorded
     begin
       raise ArgumentError unless params[:RecordingSid]
+      p params
+      p 'モデル作る前'
       record = Record.new(recording_url: params[:RecordingUrl],
                           from: params[:From],
                           note: 'Created')
+      p 'モデル作れた'
       record.save
+      p 'セーブできた'
       redirect_to "/confirm/#{record.id}"
     rescue Exception => e
       p e
